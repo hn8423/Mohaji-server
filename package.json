@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ryujaekang/Mohaji-server.git"
+    "url": "git+https://github.com/codestates/Mohaji-server.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ryujaekang/Mohaji-server/issues"
+    "url": "https://github.com/codestates/Mohaji-server/issues"
   },
-  "homepage": "https://github.com/Ryujaekang/Mohaji-server#readme",
+  "homepage": "https://github.com/codestates/Mohaji-server#readme",
   "dependencies": {
     "express": "^4.17.1"
   }
