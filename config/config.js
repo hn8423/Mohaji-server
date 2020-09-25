@@ -22,8 +22,9 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": "pro_name",
+    username,
     "database": "mohaji_production",
+    password,
     host,
     port,
     "dialect": "mysql"
