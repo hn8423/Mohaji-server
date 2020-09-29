@@ -1,7 +1,10 @@
 'use strict';
+const { hooksController } = require('../moduleStorage')
+
 const {
   Model
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class user extends Model {
     /**
@@ -14,14 +17,31 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   user.init({
-    email: DataTypes.STRING,
-    nickname: DataTypes.STRING,
-    passwords: DataTypes.STRING,
+    email: {
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull: false
+    },
+    nickname: {
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull: false
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     profile_img: DataTypes.STRING,
     tag_id: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'user',
-  });
+  },
+
+    {
+      hooks: {
+        beforeCreate: hooksController.beforeCreate,
+        beforeFind: hooksController.beforeFind
+
+      },
+      sequelize, modelName: 'user',
+    });
   return user;
 };
