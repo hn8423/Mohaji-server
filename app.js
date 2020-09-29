@@ -1,5 +1,5 @@
 require('dotenv').config();
-const secret = process.env.secret;
+const secret = process.env.sessSecret;
 const express = require('express')
 const app = express();
 const port = 4000;

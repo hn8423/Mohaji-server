@@ -3,7 +3,7 @@ const { user } = require('../../models');
 module.exports = {
     post: async (req, res) => {
         let { email, nickname, password, profile_img, tag } = req.body
-        await user.findOrCreate({
+        user.findOrCreate({
             where: { email },
             defaults: {
                 nickname,
@@ -18,7 +18,5 @@ module.exports = {
                 }
                 res.status(201).json(result.nickname);
             })
-        res.end();
     }
 }
-

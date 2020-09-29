@@ -1,6 +1,6 @@
 require('dotenv').config();
 const crypto = require('crypto');
-const secret = process.env.secret;
+const secret = process.env.cryptoSecret;
 
 module.exports = {
     beforeCreate: (data) => {

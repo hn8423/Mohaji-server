@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.DATE
       },
       user_id: {
-        allowNull: false, //
+        allowNull: false,
         type: Sequelize.INTEGER,
         references: {
           model: "users",
