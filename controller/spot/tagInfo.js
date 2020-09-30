@@ -8,7 +8,6 @@ module.exports = {
             acc.push({ id, tag_name });
             return acc
         }, [])
-        console.log("tagData: ", tagData)//날짜 정보등 없이, 필요한 정보 id, tagname만 보냄
         res.status(200).json(tagData)
     },
 
@@ -21,7 +20,6 @@ module.exports = {
         if (!created) {
             return res.status(409).end();
         } else {
-            console.log("result : ", result)
             return res.status(201).end();
         }
     }
