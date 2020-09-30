@@ -2,5 +2,6 @@ module.exports = {
     signin: require('./signin'),
     signout: require('./signout'),
     signup: require('./signup'),
-    info: require('./info')
+    info: require('./info'),
+    social: require('./socialSignin')
 };
