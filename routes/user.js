@@ -7,6 +7,6 @@ router.post('/signin', userController.signin.post);
 router.post('/signout', userController.signout.post);
 router.post('/signup', userController.signup.post);
 router.get('/info', userController.info.get);
-router.post('./gettags', userController.gettags.post);
+router.post('/get-tags', userController.gettags.post);
 
 module.exports = router;
