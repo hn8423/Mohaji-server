@@ -1,4 +1,4 @@
 module.exports = {
-    // spotController: require('./spot'),
+    spotController: require('./spot'),
     userController: require('./user')
 };
