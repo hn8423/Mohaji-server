@@ -7,8 +7,7 @@ const cors = require("cors");
 const session = require("express-session");
 const morgan = require("morgan");
 const userRouter = require('./routes/user');
-// const spotRouter = require('./routes/spot');
-// 스팟 라우터 부분입니다/ 아직 미작성
+const spotRouter = require('./routes/spot');
 
 app.use(
   session({
@@ -28,8 +27,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/user', userRouter);
-// app.use('/spot', spotRouter);
-// 스팟 라우터 부분입니다/ 아직 미작성
+app.use('/spot', spotRouter);
+
 
 
 app.listen(port, () => {

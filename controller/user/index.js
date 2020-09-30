@@ -3,5 +3,6 @@ module.exports = {
     signout: require('./signout'),
     signup: require('./signup'),
     info: require('./info'),
-    social: require('./socialSignin')
+    social: require('./socialSignin'),
+    gettags: require('./getTags')
 };

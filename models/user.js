@@ -15,6 +15,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(db) {
       this.hasMany(db.comment, { foreignKey: "user_id", sourceKey: "id" })
     }
+    static associate(db) {
+      this.hasMany(db.user_tag, { foreignKey: "user_id", sourceKey: "id" })
+    }
   };
   user.init({
     email: {
@@ -32,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     profile_img: DataTypes.STRING,
-    tag_id: DataTypes.INTEGER
+    tag_id: DataTypes.JSON
   },
 
     {
