@@ -1,6 +1,6 @@
 module.exports = {
     post: (req, res) => {
         req.session.destroy();
-        res.redirect('/');
+        res.status(200).send();
     }
 };
