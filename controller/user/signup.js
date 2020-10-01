@@ -8,7 +8,8 @@ module.exports = {
             where: { email },
             defaults: {
                 nickname,
-                password
+                password,
+                social: false
             }
         });
 
@@ -17,7 +18,7 @@ module.exports = {
         } else {
             for (let i in tag) {
                 if (tag[i]) {
-                    await user_tag.create({
+                    user_tag.create({
                         user_id: result.id,
                         tag_id: i
                     })

@@ -11,8 +11,8 @@ module.exports = {
             for (let i in tag) {
                 if (tag[i]) {
                     await user_tag.create({ user_id: userData.id, tag_id: i });
-                };
-            };
+                }
+            }
             return res.status(201).send('수정 완료')
         } else {
             return res.status(401).send('session not fonud')

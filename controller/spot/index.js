@@ -1,3 +1,3 @@
 module.exports = {
-    taginfo: require('./taginfo')
+    taginfo: require('./tagInfo')
 }

@@ -9,7 +9,6 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       email: {
-        allowNull: false,
         unique: true,
         type: Sequelize.STRING
       },
@@ -19,14 +18,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       password: {
-        allowNull: false,
         type: Sequelize.STRING
-      },
-      profile_img: {
-        type: Sequelize.STRING
-      },
-      tag_id: {
-        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -35,6 +27,14 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      social: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN
+      },
+      social_id: {
+        unique: true,
+        type: Sequelize.STRING
       }
     });
   },
