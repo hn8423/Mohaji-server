@@ -3,4 +3,5 @@ module.exports = {
     signout: require('./signout'),
     signup: require('./signup'),
     info: require('./info'),
+    tagUpdate: require('./tag-update')
 };

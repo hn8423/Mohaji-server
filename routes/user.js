@@ -7,5 +7,6 @@ router.post('/signin', userController.signin.post);
 router.post('/signout', userController.signout.post);
 router.post('/signup', userController.signup.post);
 router.get('/info', userController.info.get);
+router.post('/tag-update', userController.tagUpdate.post);
 
 module.exports = router;
