@@ -7,7 +7,8 @@ router.post('/signin', userController.signin.post);
 router.post('/signout', userController.signout.post);
 router.post('/signup', userController.signup.post);
 router.get('/info', userController.info.get);
-router.post('/social', userController.social.post);
+router.post('/social-signin', userController.socialSignin.post);
+router.post('/social-signup', userController.socialSignup.post);
 router.post('/get-tags', userController.gettags.post);
 
 module.exports = router;

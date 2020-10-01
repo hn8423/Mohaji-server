@@ -14,16 +14,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(db) {
       this.hasMany(db.comment, { foreignKey: "user_id", sourceKey: "id" })
-    }
-    static associate(db) {
       this.hasMany(db.user_tag, { foreignKey: "user_id", sourceKey: "id" })
     }
-  };
+  }
   user.init({
     email: {
       type: DataTypes.STRING,
-      unique: true,
-      allowNull: false
+      unique: true
     },
     nickname: {
       type: DataTypes.STRING,
@@ -31,18 +28,31 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     password: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
+    },
+    social: {
+      type: DataTypes.BOOLEAN,
       allowNull: false
     },
-    profile_img: DataTypes.STRING,
-    tag_id: DataTypes.JSON
+    social_id: {
+      type: DataTypes.STRING,
+      unique: true
+    }
   },
 
     {
       hooks: {
-        beforeCreate: hooksController.beforeCreate,
-        beforeFind: hooksController.beforeFind
-
+        beforeCreate: (data) => {
+          if (data.password) {
+            data.password = hooksController.password(data.password);
+          }
+        },
+        beforeFind: (data) => {
+          if (data.where.password) {
+            console.log(data.where.password)
+            data.where.password = hooksController.password(data.where.password);
+          }
+        }
       },
       sequelize, modelName: 'user',
     });

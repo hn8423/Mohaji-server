@@ -9,7 +9,8 @@ module.exports = {
             where: { email },
             defaults: {
                 nickname,
-                password
+                password,
+                social: false
             }
         });
 
@@ -21,11 +22,11 @@ module.exports = {
             // 태그는 반복문을 돌리고
             for (let i in tag) {
                 if (tag[i]) {
-                    let tagData = await user_tag.create({
+                    user_tag.create({
                         user_id: result.id,
                         tag_id: i
                     })
-                    console.log("tagData :: ", tagData)
+                    // console.log("tagData :: ", tagData)
                     // 다 같이 들어가질까?? => X
                     // userId도 i 만큼의 반복이 필요!
                 }
