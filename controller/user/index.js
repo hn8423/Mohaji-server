@@ -5,5 +5,5 @@ module.exports = {
     info: require('./info'),
     socialSignin: require('./socialSignin'),
     socialSignup: require('./socialSignup'),
-    gettags: require('./getTags')
+    tagUpdate: require('./tag-update')
 };
