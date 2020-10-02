@@ -11,9 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(db) {
       this.belongsTo(db.user, { foreignKey: "user_id", targetKey: "id" });
-      this.belongsTo(db.playspot, { foreignKey: "playspot_id", targetKey: "id" });
     }
-  };
+  }
   comment.init({
     message: DataTypes.STRING,
     user_id: DataTypes.INTEGER,

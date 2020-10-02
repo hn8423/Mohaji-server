@@ -4,6 +4,7 @@ const { user } = require('../../models');
 
 module.exports = {
     get: async (req, res) => {
+        let {playspot_id} = req.params
         let data = await comment.findAll({
             where: { playspot_id },
         });
