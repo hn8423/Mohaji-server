@@ -1,5 +1,6 @@
 //const { playspot } = require('../../models');
 const { comment } = require('../../models');
+const { user } = require('../../models');
 
 module.exports = {
     get: async (req, res) => {
@@ -15,11 +16,13 @@ module.exports = {
     },
 
     post: async (req, res) => {
+        let { userid } = req.session;
         let { message, playspot_id } = req.body;
-        if (message) {
+        if (userid) {
             let data = await comment.create({
                 playspot_id: playspot_id,
-                message: message,
+                message: message,    
+                user_id: userid.id,
             })
             res.status(201).json(data);
         } else {
