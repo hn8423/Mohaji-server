@@ -10,12 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(db) {
-      this.belongsTo(db.user, { foreignKey: "user_id", targetKey: "id" })
+      this.belongsTo(db.user, { foreignKey: "user_id", targetKey: "id" });
+      this.belongsTo(db.playspot, { foreignKey: "playspot_id", targetKey: "id" });
     }
   };
   comment.init({
     message: DataTypes.STRING,
-    user_id: DataTypes.INTEGER
+    user_id: DataTypes.INTEGER,
+    playspot_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'comment',

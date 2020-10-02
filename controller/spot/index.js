@@ -1,3 +1,4 @@
 module.exports = {
-    taginfo: require('./tagInfo')
+    taginfo: require('./tagInfo'),
+    comment: require('./comment')
 }
