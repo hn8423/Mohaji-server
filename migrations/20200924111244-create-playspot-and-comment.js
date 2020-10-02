@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      spot_name: {
         type: Sequelize.STRING
       },
       address: {
@@ -23,9 +23,6 @@ module.exports = {
       spot_description: {
         type: Sequelize.STRING
       },
-      comment_id: {
-        type: Sequelize.INTEGER
-      },
       open_time: {
         type: Sequelize.STRING
       },
@@ -36,16 +33,54 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       createdAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       }
     });
+    await queryInterface.createTable('comments', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER
+      },
+      message: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      createdAt: {
+        allowNull: true,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: true,
+        type: Sequelize.DATE
+      },
+      user_id: {
+        allowNull: true,
+        type: Sequelize.INTEGER,
+        references: {
+          model: "users",
+          key: "id"
+        }
+      },
+      playspot_id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: "playspots",
+          key: "id"
+        }
+      }
+    });
   },
+
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('playspots');
+    await queryInterface.dropTable('comments');
   }
 };
